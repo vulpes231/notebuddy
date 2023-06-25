@@ -29,7 +29,7 @@ To get started with Note Buddy, follow these steps:
 2. Navigate to the project directory:
 
    ```bash
-   cd note-buddy
+   cd notebuddy
    ```
 
 3. Open `index.html` in your preferred web browser.
