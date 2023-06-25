@@ -6,8 +6,27 @@ const note = document.getElementById("note");
 const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close");
+let notes = document.querySelectorAll(".note");
 
 let counter = document.getElementById("counter");
+
+function displayEmpty() {
+  let noteLenght = counter.textContent;
+  console.log(noteLenght);
+  if (noteLenght <= 1) {
+    // console.log("yes");
+    let div = document.createElement("div");
+    div.classList.add("empty");
+    let image = document.createElement("img");
+    image.src = "assets/images/emtyp.svg";
+    image.alt = "empty-container-image";
+    image.width = "100";
+    div.appendChild(image);
+    notesContainer.appendChild(div);
+  } else {
+    console.log("Not yet");
+  }
+}
 
 // modal toggle function
 createNoteButton.addEventListener("click", function () {
@@ -22,7 +41,6 @@ let notecount = noteCounter();
 counter.textContent = notecount;
 
 function noteCounter() {
-  let notes = document.querySelectorAll(".note");
   notes.forEach((note) => {});
 
   return notes.length;
@@ -72,11 +90,12 @@ function createNote() {
 
 let deleteButtons = document.querySelectorAll(".delete");
 for (let i = 0; i < deleteButtons.length; i++) {
-  console.log(deleteButtons[i]);
+  // console.log(deleteButtons[i]);
   deleteButtons[i].addEventListener("click", function (e) {
     let delItem = e.target.parentNode.parentNode;
     delItem.remove();
     notecount--;
+    displayEmpty();
     counter.textContent = notecount;
   });
 }
