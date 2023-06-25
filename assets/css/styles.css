@@ -1,0 +1,254 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
+html {
+  font-family: sans-serif;
+}
+
+/* utility */
+.nowrap {
+  white-space: nowrap;
+}
+.brand {
+  color: var(--brand);
+}
+
+/* custom */
+:root {
+  --brand: #d95b36;
+  --bg: #333;
+  --fg: #fff;
+  --padLG: 15px;
+  --padMD: 10px;
+  --padSM: 5px;
+}
+
+/* general */
+
+header {
+  background-color: #333;
+}
+nav {
+  max-width: 1000px;
+  margin: auto;
+  padding: var(--padMD);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-bottom: 40px; */
+  height: 70px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+}
+.logo h1 {
+  color: var(--fg);
+  letter-spacing: 2px;
+}
+.logo a {
+  color: var(--bg);
+}
+.logo img {
+  border-radius: 50%;
+}
+nav ul {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  letter-spacing: 1px;
+}
+nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--brand);
+}
+nav ul .icon {
+  font-size: 1rem;
+  /* color: blue; */
+}
+nav ul li a {
+  color: var(--brand);
+  font-size: 0.8rem;
+}
+ul img {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--brand);
+}
+nav .menu {
+  color: var(--fg);
+}
+
+/* main */
+main {
+  min-height: calc(100vh - 120px);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--padLG);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 40px;
+}
+.content form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.1);
+  padding: 1.4rem;
+  gap: 1rem;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+form input {
+  padding: 0.8rem;
+  border: none;
+  background-color: hsla(240, 1%, 45%, 0.041);
+  color: #333;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+}
+form input:focus {
+  border: 1px solid var(--brand);
+}
+form input::placeholder {
+  color: #333;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  word-spacing: 1.5px;
+}
+form textarea {
+  padding: 1rem;
+  border: none;
+  background-color: hsla(240, 1%, 45%, 0.041);
+  color: #333;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+}
+form textarea:focus {
+  border: 1px solid var(--brand);
+}
+form button {
+  margin-top: 30px;
+  padding: 1rem;
+  background-color: var(--brand);
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.1);
+}
+/* Notes */
+.close {
+  align-self: flex-end;
+  color: var(--brand);
+}
+#modal {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 20%, 0.109);
+  transition: all 0.5s ease;
+}
+#form {
+  position: absolute;
+  background-color: var(--fg);
+  top: 200px;
+  /* right: 50px; */
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.notes {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  padding: 1rem;
+}
+.notes .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.notes .header button {
+  padding: 8px 15px;
+  background-color: var(--brand);
+  border: none;
+  border-radius: 10px;
+  color: var(--fg);
+  text-transform: uppercase;
+}
+
+/* footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  height: 50px;
+  padding: var(--padLG);
+  color: #fff;
+}
+
+/* media queries */
+@media screen and (min-width: 760px) {
+  nav ul {
+    display: flex;
+  }
+  nav .menu {
+    display: none;
+  }
+  .content form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  nav ul .icon {
+    font-size: 1.4rem;
+    /* color: blue; */
+  }
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  nav {
+    padding: 1rem;
+  }
+  .notes .header button {
+    padding: 10px 20px;
+  }
+  #form {
+    top: 180px;
+    right: 50px;
+    width: 550px;
+    transition: all 0.5s ease;
+  }
+}
