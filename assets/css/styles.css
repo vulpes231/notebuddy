@@ -41,6 +41,8 @@ html {
 
 header {
   background-color: #333;
+  position: sticky;
+  top: 0;
 }
 nav {
   max-width: 1000px;
@@ -78,14 +80,14 @@ nav ul li {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  color: var(--brand);
+  color: var(--fg);
 }
 nav ul .icon {
   font-size: 1rem;
   /* color: blue; */
 }
 nav ul li a {
-  color: var(--brand);
+  color: var(--fg);
   font-size: 0.8rem;
 }
 ul img {
@@ -171,7 +173,7 @@ form button {
   color: var(--brand);
 }
 #modal {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -179,6 +181,7 @@ form button {
   height: 100vh;
   background-color: hsla(0, 0%, 20%, 0.109);
   transition: all 0.5s ease;
+  z-index: 1;
 }
 #form {
   position: absolute;
@@ -202,13 +205,78 @@ form button {
 }
 .notes .header button {
   padding: 8px 15px;
-  background-color: var(--brand);
-  border: none;
+  border: 1px solid var(--brand);
   border-radius: 10px;
-  color: var(--fg);
+  color: var(--brand);
   text-transform: uppercase;
+  background-color: transparent;
 }
-
+.notes .header p {
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: hsla(0, 0%, 29%, 0.071);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+}
+.note .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  word-spacing: 2px;
+}
+.note .text h3 {
+  color: var(--brand);
+}
+.note .text p {
+  width: 70%;
+}
+.note .text span {
+  font-size: 0.7rem;
+  color: darkgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: white;
+  width: 100%;
+  box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+  padding-left: 40px;
+}
+.note .mods {
+  display: flex;
+  gap: 1rem;
+  /* background-color: red; */
+  margin-bottom: 1.5rem;
+}
+.edit {
+  padding: 8px 24px;
+  border: 1px solid rgba(3, 3, 223, 0.765);
+  color: rgba(3, 3, 223, 0.765);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.delete {
+  padding: 8px 16px;
+  border: 1px solid var(--brand);
+  background-color: transparent;
+  color: var(--brand);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
 /* footer */
 footer {
   display: flex;
@@ -219,7 +287,10 @@ footer {
   padding: var(--padLG);
   color: #fff;
 }
-
+#counter {
+  color: var(--brand);
+  font-weight: 400;
+}
 /* media queries */
 @media screen and (min-width: 760px) {
   nav ul {
@@ -250,5 +321,12 @@ footer {
     right: 50px;
     width: 550px;
     transition: all 0.5s ease;
+  }
+  .note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
   }
 }

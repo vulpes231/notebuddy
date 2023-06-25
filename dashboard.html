@@ -41,7 +41,7 @@
     <!-- content -->
     <main>
       <!-- content -->
-      <div class="content">
+      <div id="content" class="content">
         <div id="modal">
           <form action="" id="form">
             <span class="material-symbols-outlined close" id="close">
@@ -68,18 +68,43 @@
             <button type="button" onclick="createNote()">Create Note</button>
           </form>
         </div>
-        <div class="notes">
+        <div id="notes" class="notes">
           <div class="header">
             <p>You currently have <span id="counter"></span> notes</p>
             <button type="button" id="create-note-button">Create Note</button>
           </div>
-          <div class="note" id="note">
-            <h3>Goat</h3>
-            <p>Bat</p>
+          <div class="note">
+            <div class="text">
+              <h3>Write a program</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+              <span>Created on: 5/25/2023, 2:15 AM</span>
+            </div>
+            <div class="mods">
+              <button class="edit" type="button">Edit</button>
+              <button class="delete" type="button">Delete</button>
+            </div>
           </div>
-          <div class="note" id="note">
-            <h3>Goat</h3>
-            <p>Bat</p>
+          <div class="note">
+            <div class="text">
+              <h3>Play chess</h3>
+              <p>Lorem, ipsum dolor.</p>
+              <span>Created on: 5/25/2023, 2:15 AM</span>
+            </div>
+            <div class="mods">
+              <button class="edit" type="button">Edit</button>
+              <button class="delete" type="button">Delete</button>
+            </div>
+          </div>
+          <div class="note">
+            <div class="text">
+              <h3>Take a walk</h3>
+              <p>Lorem ipsum dolor sit.</p>
+              <span>Created on: 5/25/2023, 2:15 AM</span>
+            </div>
+            <div class="mods">
+              <button class="edit" type="button">Edit</button>
+              <button class="delete" type="button">Delete</button>
+            </div>
           </div>
         </div>
       </div>
