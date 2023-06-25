@@ -45,4 +45,5 @@ function createNote() {
   notecount++;
   counter.textContent = notecount;
   form.reset();
+  modal.style.display = "none";
 }
