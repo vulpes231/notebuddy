@@ -1,4 +1,8 @@
 # Note Buddy
+![Screen Shot 2023-06-26 at 4 19 59 AM](https://github.com/vulpes231/notebuddy/assets/94878993/e7323ede-2e0c-42ff-95eb-ce960bc5a526)
+
+![Uploading Screen Shot 2023-06-26 at 4.19.51 AM.png…]()
+![Uploading Screen Shot 2023-06-26 at 4.19.38 AM.png…]()
 
 Note Buddy is a frontend web application that helps you stay organized by allowing you to create and manage your todo notes with ease. With a simple and intuitive interface, you can quickly jot down tasks, add titles, and provide detailed descriptions.
 
