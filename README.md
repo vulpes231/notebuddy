@@ -1,6 +1,6 @@
 # Note Buddy
 
-Note Buddy is a web application that helps you stay organized by allowing you to create and manage your todo notes with ease. With a simple and intuitive interface, you can quickly jot down tasks, add titles, and provide detailed descriptions.
+Note Buddy is a frontend web application that helps you stay organized by allowing you to create and manage your todo notes with ease. With a simple and intuitive interface, you can quickly jot down tasks, add titles, and provide detailed descriptions.
 
 ## Features
 

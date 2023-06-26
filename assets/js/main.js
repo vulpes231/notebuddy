@@ -17,7 +17,7 @@ function displayEmpty() {
   console.log(noteLenght);
   if (noteLenght < 1) {
     // console.log("yes");
-    div.style.display = "grid";
+    div.style.display = "flex";
   } else {
     div.style.display = "none";
   }
