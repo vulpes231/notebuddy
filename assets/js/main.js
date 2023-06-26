@@ -7,24 +7,19 @@ const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close");
 let notes = document.querySelectorAll(".note");
+let deleteButtons = document.querySelectorAll(".delete");
+let div = document.getElementById("empty-image");
 
 let counter = document.getElementById("counter");
 
 function displayEmpty() {
   let noteLenght = counter.textContent;
   console.log(noteLenght);
-  if (noteLenght <= 1) {
+  if (noteLenght < 1) {
     // console.log("yes");
-    let div = document.createElement("div");
-    div.classList.add("empty");
-    let image = document.createElement("img");
-    image.src = "assets/images/emtyp.svg";
-    image.alt = "empty-container-image";
-    image.width = "100";
-    div.appendChild(image);
-    notesContainer.appendChild(div);
+    div.style.display = "grid";
   } else {
-    console.log("Not yet");
+    div.style.display = "none";
   }
 }
 
@@ -42,7 +37,6 @@ counter.textContent = notecount;
 
 function noteCounter() {
   notes.forEach((note) => {});
-
   return notes.length;
 }
 // ...
@@ -82,20 +76,17 @@ function createNote() {
 
   notesContainer.appendChild(newContent); // Append the newContent element to the container
 
-  notecount++;
+  notecount += 1;
   counter.textContent = notecount;
   form.reset();
   modal.style.display = "none";
 }
 
-let deleteButtons = document.querySelectorAll(".delete");
-for (let i = 0; i < deleteButtons.length; i++) {
-  // console.log(deleteButtons[i]);
-  deleteButtons[i].addEventListener("click", function (e) {
-    let delItem = e.target.parentNode.parentNode;
-    delItem.remove();
-    notecount--;
+deleteButtons.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    let itemToDelete = e.target.parentNode.parentNode;
+    itemToDelete.remove();
+    counter.textContent = notecount -= 1;
     displayEmpty();
-    counter.textContent = notecount;
   });
-}
+});
