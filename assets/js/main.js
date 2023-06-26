@@ -80,6 +80,7 @@ function createNote() {
   counter.textContent = notecount;
   form.reset();
   modal.style.display = "none";
+  div.style.display = "none";
 }
 
 deleteButtons.forEach((btn) => {
